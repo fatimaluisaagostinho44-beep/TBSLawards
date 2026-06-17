@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcio Samuel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Slabo+27px&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Slabo+27px&display=swap');
+        
+    
+body{
+background:darkblue;
+color:#FFD700;
+overflow-x:hidden;
+}
+
+/* MENU */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background: darkblue;
+backdrop-filter:blur(10px);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#FFD700;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.menu a:hover{
+color:#FFD700;
+}
+
+/* HERO */
+
+.hero{
+    font-family: roboto slabo , sans serif;
+height:100vh;
+position:relative;
+overflow:hidden;
+font-size: 10px;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to right,
+transparent,
+blueviolet
+);
+}
+
+.hero-content{
+position:absolute;
+z-index:10;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+}
+
+.hero-content img{
+width:100px;
+}
+
+#display {
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1{
+font-size:60px;
+}
+
+.hero-content h2{
+font-size:28px;
+color:#FFD700;
+}
+
+/* SEÇÕES */
+
+section{
+padding:100px 8%;
+}
+
+.titulo{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+}
+
+/* GALERIA */
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background-color: blue;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+margin-bottom:10px;
+}
+
+/* NAVEGAÇÃO */
+
+.links{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+}
+
+.links a{
+padding:12px 25px;
+background:#FFD700;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* ÚLTIMA SECÇÃO */
+
+.auto-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.auto-card{
+height:300px;
+position:relative;
+border-radius:20px;
+overflow:hidden;
+}
+
+.auto-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+position:absolute;
+}
+
+.auto-card::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.auto-card .texto{
+position:absolute;
+z-index:2;
+bottom:20px;
+left:20px;
+right:20px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#050505;
+}
+
+#rolagem {
+    display: flex;
+    overflow-x: auto;
+}
+
+.item {
+    height: 400px;
+    width: 400px;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.item img {
+    height: 300px;
+    border-radius: 7px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+
+<div class="logo">
+    <img src="https://image.cdn2.seaart.me/2026-06-16/d8oqrs5e878c73c06da0/6c1cae64-1724-43f5-86f3-226b8505c85c.png" alt="Logo da Nations" style="height: 40px;"> TBSL Awards</div>
+
+<div class="menu">
+<a href="#sobre">Introdução</a>
+<a href="#galeria">Galeria</a>
+<a href="#premios">Prémios</a>
+</div>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="slide active"
+style="background-image:url('https://image.cdn2.seaart.me/upload/static/20260616/3b7f1d1d55f24fa47c6619bd415372fa_high.webp');">
+</div>
+
+<div class="slide"
+style="background-image:url('https://image.cdn2.seaart.me/upload/static/20260616/7c0ee36151ca1211f4cc569e66ab4d00_high.webp');">
+</div>
+
+<div class="slide"
+style="background-image:url('https://image.cdn2.seaart.me/upload/static/20260616/f16b39c62af71b170a16d333e020f4d5_high.webp');">
+</div>
+
+<div class="slide" style="background-image: url('https://image.cdn2.seaart.me/upload/static/20260616/a6c55a509b63962d91083184687b2541_high.webp');">
+</div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+    <div id="display">
+
+<img src="https://image.cdn2.seaart.me/2026-06-16/d8oqrs5e878c73c06da0/6c1cae64-1724-43f5-86f3-226b8505c85c.png">
+
+<h1>TBSL Nations Tour Soccer</h1> </div>
+
+<h2>Awards</h2>
+
+<div class="links">
+<a href="#sobre">Sobre</a>
+<a href="#galeria">Galeria</a>
+<a href="#premios">Prémios</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<h2 class="titulo">
+Bem-vindo à TBSL Nations Tour Soccer Awards
+</h2>
+
+<p style="text-align:center;max-width:900px;margin:auto;font-size:18px;">
+A TBSL Nations Tour Soccer Awards celebra os melhores talentos,
+clubes e momentos do futebol. Inspirada nas maiores cerimónias
+do mundo, esta competição reconhece a excelência desportiva,
+liderança, fair-play e conquistas individuais.
+</p>
+
+<div style="background: #FFD700; color: darkblue; margin: auto; align-items: center;">
+    <img src="https://image.cdn2.seaart.me/upload/static/20260616/a6c55a509b63962d91083184687b2541_high.webp" alt="Brasil win Nations" style="height: 400px; border-radius: 7px; border: 2px solid blueviolet; margin: auto;">
+    <br><p>O Brasil foi o campeão dessa edição da TBSL Nations Tour Soccer,essa que foi a primeira edição ja feita</p>
+    <br><br><img src="https://image.cdn2.seaart.me/upload/static/20260616/7c0ee36151ca1211f4cc569e66ab4d00_high.webp" style="height: 400px; border:10px; border-radius:  2px solid red;">
+    <br><p>Joélcio AN foi o artilheiro da competição com 12 golos anotados,estabelecendo a melhor media,Fadario, Requito, Eliano e Márcio empataram o segundo lugar com 9 golos</p>
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2 class="titulo">Galeria Oficial</h2>
+
+<div class="galeria">
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/8b36af1a715fad812eec3ecf01ec4d01_high.webp" alt="Melhor equipa brasil">
+<div class="card-content">
+<h3>Melhor Seleção</h3>
+<p>O Brasil foi a melhor seleção após ser o claro merecido depois de ser campeão,foram 5 vitórias ,2 empates ,2 derrotas , 19 Golos Marcados,sendo obviamente a equipa mais destacada 🇧🇷</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/4d0bed6e38ba71cbecd0a58436b9fc4d_high.webp">
+<div class="card-content">
+<h3>Melhor Capitão</h3>
+<p>Ele foi Presente em todos os momentos que a sua Selecção precisou dele e pontual nos jogos</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/990a295816dd118031be8ba6d2ce56b5_high.webp">
+<div class="card-content">
+<h3>Melhor dupla</h3>
+<p>Foram 9+7= 16 golos e 3 assistências 19 G/A</p>
+</div>
+</div>
+
+<div class="card">
+    <img src="https://image.cdn2.seaart.me/upload/static/20260616/e6e8312fa5ef79ddfc52261b27bc8d9b_high.webp" alt="J'E">
+    <div class="card-content">
+        <h3>Melhor jogador Revelação</h3>
+        <p>J'E foi brilhante, com 3 Golos em 6 jogos, sendo 2 na Fase mais importante</p>
+    </div>
+</div>
+
+<div id="rolagem">
+<div class="item">
+    <h3>Bota de Bronze</h3>
+    <img src="https://image.cdn2.seaart.me/upload/static/20260616/974cd07153d3d3a355ab8bf51283a0d4_high.webp" alt="Requito">
+    <p>Requito foi bola de bronze com 9 golos em 9 Jogos e 2 assistências</p>
+</div>
+<div class="item">
+    <h3>Bota de Prata</h3>
+    <img src="https://image.cdn2.seaart.me/upload/static/20260616/56a147e8be804591c4132b300a70f790_high.webp" alt="Fadario silver ball">
+    <p>Fadario teve 9 golos em 6 Jogos e 1 assistência</p>
+</div>
+<div class="item">
+    <h3>Bota de Ouro</h3>
+    <img src="https://image.cdn2.seaart.me/upload/static/20260616/d17fb427ad3b6671ea3c74028ab2b6a1_high.webp" alt="Joélcio Golden foot">
+    <p> Joélcio AN foi o grande artilheiro cdo torneio</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/e3aaa83a4bae5a6068ee4468e788cf8f_high.webp" style="height: 480px; width: auto; margin: auto;">
+<div class="card-content">
+<h3>Melhor 5</h3>
+<p>Estes são os 5 jogadores que fizeram parte do 5 da temporada da TBSL Nations Tour Soccer</p>
+<ul>
+  <li>Eliano Dembo 🇧🇷</li>
+  <li>Fadario 🇪🇸</li>
+  <li>Marcio Samuel 🇧🇷</li>
+  <li>Joelcio AN 🏴󠁧󠁢󠁥󠁮󠁧󠁿</li>
+  <li>Requito 🇲🇿</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/9fcc250d022c0964c676d45895e63a22_high.webp">
+<div class="card-content">
+<h3>Bola de Bronze</h3>
+<p>Os palcos dos grandes espetáculos.Eliano em destaque foi o bola de bronze</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/e006d8dc94e401d881410cd1abcd2c83_high.webp">
+<div class="card-content">
+<h3>Bola de Prata</h3>
+<p>Requito dos Mambas foi O Bola de prata após7 golos em 7 jogos 
+    5 Vezes eleito na Equipa Ideal 
+    3 MVP's
+    1 vez eleito o melhor da Jornada 
+    Crucial em momentos mais
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://image.cdn2.seaart.me/upload/static/20260616/bc3f6921f4aef22abfaf7070ebc181cf_high.webp">
+<div class="card-content">
+<h3>Bola de Ouro (MVP do Torneio)</h3>
+<p> Marcio Samuel MVP com 9 golos em 9 Jogos 
+    4 MVP'S 
+    5 vezes no 5 ideal 
+    1 vez eleito no Melhor da Jornada
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMschWTYIMRlkD9vo9xuIAuluvnCZwiaM-tPxA1aolmIuF39krVmTD5o&s=10">
+<div class="card-content">
+<h3>Primeira edição da Competição</h3>
+<p>Esta é a oficialmente a primeira edição da TBSL Nations Tour Soccer que se realizará sempre antes da época da TBSL,o início da nova edição da TBSL está para o final de julho</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="premios">
+
+<h2 class="titulo">Prémios em Destaque</h2>
+
+<div class="auto-grid">
+
+<div class="auto-card">
+<img class="auto-img">
+<div class="texto">
+<h3>Vencedores de prêmio</h3>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 TBSL Nations Tour Soccer Awards
+</footer>
+
+<script>
+
+/* SLIDER */
+
+const slides=document.querySelectorAll('.slide');
+let atual=0;
+
+setInterval(()=>{
+
+slides[atual].classList.remove('active');
+
+atual=(atual+1)%slides.length;
+
+slides[atual].classList.add('active');
+
+},3000);
+
+/* CARDS AUTOMÁTICOS */
+
+const imagens=[
+
+'https://static01.nyt.com/athletic/uploads/wp/2025/01/30113739/kaoru-mitoma-bha-scaled-e1738255090351.jpg',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5UxqRjc2ps_DdMnqavrXdFQ2CMS_q7MGnSGuQdIMBQ&s=10,',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn0Yn6NupSbJrz75Y9FRdz7_4Z4C5tWPc1pR6XS5dmuw&s=10',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIkJ8Ub8EGy7Qs3PC44KIT-5F6YqjNxKAIQ3KN_4ddlg&s',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFk0QrrxIOkl7O9JIcbUrr3SasMBRAxwOUWvw8sa2NQ&s=10',
+'https://image.cdn2.seaart.me/upload/static/20260616/7c0ee36151ca1211f4cc569e66ab4d00_high.webp'
+
+];
+
+const cards=document.querySelectorAll('.auto-img');
+
+function trocar(){
+
+cards.forEach(card=>{
+
+let random=Math.floor(
+Math.random()*imagens.length
+);
+
+card.src=imagens[random];
+
+});
+
+}
+
+trocar();
+
+setInterval(trocar,2000);
+
+</script>
+
+</body>
+</html>
