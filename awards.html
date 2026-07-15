@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Prémios UFV 2026 - Torneios da UFV</title>
+      <style>
+            
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        color: #ddd;
+    }
+
+    header {
+        background-image: url('https://image.cdn2.seaart.me/upload/static/20260714/1d9337e3c0fa22879f7843bb31394cf3_high.webp');
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #ec4899;
+    }
+
+ nav {
+                display: Flex;
+                font-family:verdana,Helvetica,sans-serif;
+                font-size: 1.1em;
+            }
+
+   nav a {
+      gap:20px;
+      padding:10px;
+      color: #ddd;
+   }
+            
+    .logo {
+        font-size: 42px;
+        font-weight: bold;
+        color: #ec4899;
+        text-shadow: 0 0 20px #ec4899;
+    }
+
+    .subtitle {
+        color: #facc15;
+        font-size: 22px;
+        margin-top: 8px;
+    }
+
+    .section {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    h2 {
+        color: #ec4899;
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        border-bottom: 3px solid #facc15;
+        padding-bottom: 15px;
+    }
+
+    .nominees-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .player-card {
+        background: #111;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s;
+        width: 30%;
+        height: 320px; /* aumentado um pouco para melhor layout */
+    }
+
+    .player-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .player-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-bottom: 3px solid #facc15;
+    }
+
+    .player-info {
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    /* === ALINHAMENTO CORRIGIDO === */
+    .player-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #facc15;
+        margin: 12px 0 8px 0;
+        font-size: 11px;
+    }
+
+    .player-name h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .player-name img {
+        width: 24px;
+        height: 18px;
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .player-team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #aaa;
+        font-size: 8px;
+    }
+
+    .player-team img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .team-card{
+    width:280px;
+    background:linear-gradient(180deg,#1d1d1d,#0b0b0b);
+    border:2px solid #facc15;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
+}
+
+.team-card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 0 20px #ec4899;
+}
+
+.team-card img{
+    display:block;
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin:25px auto 15px;
+}
+
+.team-info{
+    background:linear-gradient(90deg,#ec4899,#c026d3);
+    color:white;
+    padding:18px;
+    text-align:center;
+}
+
+.team-info h3{
+    margin:0;
+    font-size:22px;
+    color:#fff;
+}
+
+.team-info p{
+    margin-top:8px;
+    color:#facc15;
+    font-size:14px;
+}
+
+    footer {
+        background: #000;
+        color: #888;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .scroll {
+         display: flex;
+         width: 100%;
+         padding: 10px;
+         overflow-x: auto;
+         scroll-behavior: smooth;
+    }
+
+    .awards {
+        width: 300px;
+        height: 400px;
+        gap:10px;
+        padding: 30px;
+        background-color: #111;
+        align-items: center;
+        text-align: center;
+    }
+
+    .awards img {
+      display: block;
+      width: 230px;
+      height: auto;
+      margin: 20px auto;
+    }
+    
+.scroll::-webkit-scrollbar{
+    height:8px;
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background:#ec4899;
+    border-radius:20px;
+}
+
+.awards ul{
+    list-style:none;
+    margin:20px 0 0;
+    padding:0;
+}
+
+.awards li{
+    background:#1b1b1b;
+    color:#facc15;
+    margin:8px 0;
+    padding:10px;
+    border-left:4px solid #ec4899;
+    border-radius:8px;
+    text-align:left;
+    font-size:15px;
+}
+
+</style>
+      </style>
+</head>
+
+<body>
+
+      <header>
+            <div class="logo">ELITE SEASON</div>
+            <div class="subtitle">Awards • 4ª Edição</div><br>
+            <div id="menu">
+            <nav>
+                <a href="index.html">Pagina Inicial</a>
+                <a href="">Pagina Atual</a>
+       </nav>
+       </div>
+      </header>
+
+      <!-- Melhor Jogador -->
+      <div class="section">
+            <h2>🟡 THE BEST: Jogador da Época</h2>
+            <div class="nominees-grid">
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b6h3de878c73f7t4hg/94ab2ced-d2fc-43de-a644-7c6bd5465427.png" alt="Jogador 1">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>FADARIO</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYKLWpqU1_QOh9KvOnZnIXze1e7eL-GfSpYsUs260viA&s=10" alt="Bandeira Australiana">
+                              </div>
+                              <div class="player-team">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-06/d8i7fjte878c73dm37og/34ee0a83-5278-4acc-be27-18c5b2ea8959.png" alt="Logo do Zeico">
+                                    <p>FC Zeico</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b6iade878c738j7agg/bf4007a3-c6b5-49f6-a7ab-dd4e495ffadf.png" alt="Jogador 2">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>AGUI</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopqhe_BqcKvz2URrRioavdry8c1bxIVxpp2kTDDno3Q&s=10" alt="Bandeira de Leões do Altlas">
+                              </div>
+                              <div class="player-team">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-11/d8liskte878c73fgrmmg/38ba98d0-6c44-4d87-abd9-fd5a74ca8580.png" alt="Lpgo do Dream">
+                                    <p>Dream Team</p>
+                              </div>
+                        </div>
+                  </div>
+                   <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b6fele878c73dsdfhg/2fb11083-ab7a-4081-beaf-49025b5aac12.png" alt="Jogador 3">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Zeizi Polo</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSow4uB7jlTcxwg4FBpSZLeBWudFhfpmsPFrTKzI9IM4A&s=10">
+                              </div>
+                              <div class="player-team">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-11/d8lc8kde878c73bgm650/bb46c5dc-ae88-4aa7-8dcf-6971cd0fff1b.png" alt="Logo do Kingsman">
+                                    <p>The Kingsman</p>
+
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Melhor Jovem -->
+      <div class="section">
+            <h2>🔵 THE BEST: Capitão da Época</h2>
+            <div class="nominees-grid">
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b9nk5e878c73e1q3a0/c5a79db2-64b9-434b-8dd0-eb3c5f80947a.png" alt="Jovem 1">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Ery</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQk1QcyFpyW0Y7PdmXK9CMT8PNWv_bOOTLckSCRwAng&s=10" alt="Bandeira da Espanha">
+                              </div>
+                              <div class="player-team">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-11/d8lij5de878c73fg37f0/d891b05a-3ee7-4d64-b5d7-dce260fd5d72.png" alt="Logo do COSMIC">
+                                    <p>Cosmic Team</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b9qa5e878c73e1uakg/6267b07c-eb21-44dd-8e55-f05b6da60fcc.png" alt="Jovem 2">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Érik</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZaXprMHCeGc1r_WVXG1iXnTzIB9NA3mZAIyAh6jzNQ&s=10">
+                              </div>
+                              <div class="player-team">
+                                <img src="https://image.cdn2.seaart.me/2026-06-09/d8k9kile878c73ej50p0/f9c1359c-511a-4aff-949f-4a935618c33d.png" alt="Logo do Puli">
+                                <p>Puli United</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b9qote878c738oimg0/e281d11c-433f-484b-84e3-db7a3fdb289c.png" alt="Jovem 3">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Katendi Inácio</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8lLw2mw4KgC4GGP4htPWZKYoGCc0rL-CVs8_F_Aipg&s=10">
+                              </div>
+                              <div class="player-team">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-11/d8lc8kde878c73bgm650/bb46c5dc-ae88-4aa7-8dcf-6971cd0fff1b.png" alt="Logo do Kingsman">
+                                    <p>The Kingsman</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="section">
+            <h2>🟣 THE BEST: Puskas • Melhor momento</h2>
+            <div class="nominees-grid">
+                  <div class="player-card">
+                        <img src="https://acdn-us.mitiendanube.com/stores/002/183/167/products/camisa-titular-da-selecao-da-franca-copa-do-mundo-2026-versao-jogador-azul-home-nike-world-cup-2026-blue-player-dc4e360bcdc4b83b3617742664584905-1024-1024.webp" alt="Técnico 1">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Graciano</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZaXprMHCeGc1r_WVXG1iXnTzIB9NA3mZAIyAh6jzNQ&s=10">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-09/d8k9kile878c73ej50p0/f9c1359c-511a-4aff-949f-4a935618c33d.png">
+                              </div>
+                              <div class="player-team">Marcou 7 golos na Final da Nations Trouphy</div>
+                        </div>
+                  </div>
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b6h3de878c73f7t4hg/94ab2ced-d2fc-43de-a644-7c6bd5465427.png" alt="Técnico 2">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYKLWpqU1_QOh9KvOnZnIXze1e7eL-GfSpYsUs260viA&s=10">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-06/d8i7fjte878c73dm37og/34ee0a83-5278-4acc-be27-18c5b2ea8959.png">
+                              </div>
+                              <div class="player-team">Marcou 4 golos na vitória por 4-3 de sua equipa no jogo que deu o título da Liga</div>
+                        </div>
+                  </div>
+                  <div class="player-card">
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9b9qa5e878c73e1uakg/6267b07c-eb21-44dd-8e55-f05b6da60fcc.png" alt="Técnico 3">
+                        <div class="player-info">
+                              <div class="player-name">
+                                    <h3>Erik</h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZaXprMHCeGc1r_WVXG1iXnTzIB9NA3mZAIyAh6jzNQ&s=10">
+                                    <img src="https://image.cdn2.seaart.me/2026-06-09/d8k9kile878c73ej50p0/f9c1359c-511a-4aff-949f-4a935618c33d.png">
+                              </div>
+                              <div class="player-team">Marcou 4 golos na SF da Élite Cup</div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Melhor Equipe -->
+      <div class="section">
+            <h2>🏅 THE BEST: Equipa da Época</h2>
+            <div class="nominees-grid">
+                  <div class="team-card">
+                        <img src="https://image.cdn2.seaart.me/2026-06-06/d8i7fjte878c73dm37og/34ee0a83-5278-4acc-be27-18c5b2ea8959.png" alt="Equipe 1">
+                        <div class="team-info">
+                              <h3>FC Zeico</h3>
+                        </div>
+                  </div>
+                  <div class="team-card">
+                        <img src="https://image.cdn2.seaart.me/2026-06-11/d8lc8kde878c73bgm650/bb46c5dc-ae88-4aa7-8dcf-6971cd0fff1b.png" alt="Equipe 2">
+                        <div class="team-info">
+                              <h3>The Kingsman</h3>
+                        </div>
+                  </div>
+                  <div class="team-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlQcFnLJElMoh2Pm0j_CFMC5bFEe5NHi6VEM6FW_JSRg&s=10" alt="Equipe 3">
+                        <div class="team-info">
+                              <h3>Gauleses</h3>
+                        </div>
+                  </div>
+            </div>
+      </div><br>
+      <section>
+            <h2>Golden Ball • Awards</h2>
+            <div class="scroll">
+                  <div class="awards">
+                        <h3>Katendi Inácio</h3>
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9aqqa5e878c73ftalfg/5f59d3d2-620f-4d11-80b3-29298be35349.png" alt="Card de Katendi">
+                        <ul>
+                              <li>25 Jogos</li>
+                              <li>22 Golos</li>
+                              <li>0 POTM</li>
+                              <li>3 MVP</li>
+                              <li>Ratio: 7.8</li>
+                        </ul>
+                  </div>
+                  <div class="awards">
+                        <h3>Fadario</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-14/d9bb5ate878c73b733bg/00e6d53b-1c5e-4d4c-b26d-f9b9ecf30662.png">
+                        <ul>
+                              <li>20 Jogos</li>
+                              <li>39 Golos</li>
+                              <li>5 POTM</li>
+                              <li>16 MVP</li>
+                              <li>Ratio: 8.7</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>Kenny Paiva</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-14/d9bb5mle878c738qm7u0/609c7df2-75a8-4b08-a000-566136251cf1.png">
+                        <ul>
+                              <li>24 Jogos</li>
+                              <li>20 Golos</li>
+                              <li>1 POTM</li>
+                              <li>8 MVP</li>
+                              <li>Ratio:8.4</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>Benedito Nsingui</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-14/d9ban4le878c738pugl0/60fd63a4-69e6-491d-9a39-5df97e7d2857.png">
+                        <ul>
+                              <li>27 Jogos</li>
+                              <li>18 Golos</li>
+                              <li>0 POTM</li>
+                              <li>6 MVP</li>
+                              <li>Ratio: 7.9</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>Érik Dos Santos</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-14/d9ardtle878c73fuhdl0/68e8a30a-bb22-435c-bb9c-d1abdcba04f3.png">
+                        <ul>
+                              <li>19 Jogos</li>
+                              <li>30 Golos</li>
+                              <li>1 POTM</li>
+                              <li>11 MVP</li>
+                              <li>Ratio:8.6</li>
+                        </ul>
+                  </div>
+            </div>
+            <br><br>
+            <div class="scroll">
+                  <div class="awards">
+                        <h3>Epifânio Manuel</h3>
+                        <img src="https://image.cdn2.seaart.me/2026-07-14/d9banhte878c738pv9ag/e73ca5c9-4503-4a04-aeff-715332ebc485.png" alt="Card de Epi">
+                        <ul>
+                              <li>22 Jogos</li>
+                              <li>20 Golos</li>
+                              <li>0 POTM</li>
+                              <li>6 MVP</li>
+                              <li>Ratio: 8.1</li>
+                        </ul>
+                  </div>
+                  <div class="awards">
+                        <h3>Zeizi Polo</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-05/d95d80de878c73fvaj5g/ee414f60-024e-442a-8c2d-228aa133fe38.png">
+                        <ul>
+                              <li>27 Jogos</li>
+                              <li>46 Golos</li>
+                              <li>4 POTM</li>
+                              <li>19 MVP</li>
+                              <li>Ratio: 8.8</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>Gabriela Sousa</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-14/d9bap4le878c738q1pa0/c0b3c08a-570f-49df-ad5b-5ca7db65eaec.png">
+                        <ul>
+                              <li>22 Jogos</li>
+                              <li>22 Golos</li>
+                              <li>0 POTM</li>
+                              <li>4 MVP</li>
+                              <li>Ratio:8.0</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>AGUINALDO</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-06-14/d8ncdbte878c73acqpr0/66b10b6f-2031-4deb-985e-99cf2d191c0d.png">
+                        <ul>
+                              <li>16 Jogos</li>
+                              <li>30 Golos</li>
+                              <li>0 POTM</li>
+                              <li>7 MVP</li>
+                              <li>Ratio: 8.9</li>
+                        </ul>
+                  </div>
+                        <div class="awards">
+                        <h3>Edward</h3>
+                              <img src="https://image.cdn2.seaart.me/2026-07-15/d9bun95e878c73cgocog/0cf31280-a3e8-4fcc-8f09-d6c8280cf227.png">
+                        <ul>
+                              <li>14 Jogos</li>
+                              <li>17 Golos</li>
+                              <li>1 POTM</li>
+                              <li>5 MVP</li>
+                              <li>Ratio:8.2</li>
+                        </ul>
+                  </div>
+            </div>
+      </section>
+
+      <footer>
+            <p>Prémios UFV 2026 • Universidade Federal de Viçosa</p>
+      </footer>
+
+</body>
+
+</html>
