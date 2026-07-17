@@ -1,0 +1,483 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#07132d;
+color:#fff;
+
+}
+
+/* ============================= */
+/* CABEÇALHO */
+/* ============================= */
+
+header{
+
+width:100%;
+background:#081128;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,.4);
+
+}
+
+.top-bar{
+
+max-width:1400px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px;
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.logo img{
+
+width:60px;
+height:60px;
+
+}
+
+.logo h1{
+
+font-size:28px;
+font-weight:bold;
+
+}
+
+nav{
+
+display:flex;
+gap:25px;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+font-size:18px;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#FFD700;
+
+}
+
+.active{
+
+color:#FFD700;
+
+}
+
+/* ============================= */
+/* BANNER */
+/* ============================= */
+
+.banner{
+
+position:relative;
+width:100%;
+height:500px;
+overflow:hidden;
+
+}
+
+.slides{
+
+display:flex;
+height:100%;
+
+}
+
+.slide{
+
+position:relative;
+min-width:100%;
+height:100%;
+
+}
+
+.slide img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.slide::before{
+
+content:"";
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.2));
+
+}
+
+.banner-info{
+
+position:absolute;
+
+left:70px;
+bottom:70px;
+
+max-width:650px;
+
+}
+
+.banner-info span{
+
+background:#FFD700;
+color:#111;
+
+padding:8px 15px;
+
+font-weight:bold;
+border-radius:6px;
+
+}
+
+.banner-info h2{
+
+margin-top:20px;
+font-size:55px;
+line-height:1.1;
+
+}
+
+.banner-info p{
+
+margin-top:20px;
+font-size:20px;
+color:#ddd;
+
+}
+
+.btn{
+
+display:inline-block;
+margin-top:30px;
+
+padding:14px 30px;
+
+background:#FFD700;
+color:#111;
+
+text-decoration:none;
+font-weight:bold;
+
+border-radius:8px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ============================= */
+/* INDICADORES */
+/* ============================= */
+
+.indicadores{
+
+position:absolute;
+
+left:50%;
+bottom:20px;
+
+transform:translateX(-50%);
+
+display:flex;
+gap:10px;
+
+}
+
+.indicadores span{
+
+width:14px;
+height:14px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.5;
+
+cursor:pointer;
+
+}
+
+.indicadores .ativo{
+
+opacity:1;
+background:#FFD700;
+
+}
+
+/* ============================= */
+/* TEMPORADAS */
+/* ============================= */
+
+.temporadas{
+
+padding:60px 20px;
+
+}
+
+.temporadas h2{
+
+font-size:40px;
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+.season-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.season-card{
+
+background:#10204d;
+
+padding:30px;
+
+border-radius:12px;
+
+text-align:center;
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.season-card:hover{
+
+background:#FFD700;
+color:#111;
+
+transform:translateY(-8px);
+
+}
+
+.season-card h3{
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+.season-card p{
+
+font-size:18px;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.top-bar{
+
+flex-direction:column;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.banner{
+
+height:350px;
+
+}
+
+.banner-info{
+
+left:20px;
+bottom:30px;
+
+}
+
+.banner-info h2{
+
+font-size:34px;
+
+}
+
+.banner-info p{
+
+font-size:16px;
+
+}
+
+}
+
+/* ============================= */
+/* TÍTULOS DAS SECÇÕES */
+/* ============================= */
+
+.section-title{
+
+font-size:40px;
+margin-bottom:30px;
+text-align:center;
+color:#fff;
+
+}
+
+/* ============================= */
+/* NOTÍCIAS */
+/* ============================= */
+
+.news{
+
+padding:70px 20px;
+
+}
+
+.news-grid{
+
+max-width:1400px;
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.news-card{
+
+background:#10204d;
+
+border-radius:18px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+transition:.35s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.news-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.news-card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+}
+
+.news-info{
+
+padding:20px;
+
+}
+
+.news-info span{
+
+display:inline-block;
+
+padding:6px 12px;
+
+background:#FFD700;
+
+color:#111;
+
+font-size:13px;
+
+font-weight:bold;
+
+border-radius:5px;
+
+}
+
+.news-info h3{
+
+margin-top:18px;
+
+font-size:25px;
+
+color:white;
+
+}
+
+.news-info p{
+
+margin-top:12px;
+
+font-size:17
